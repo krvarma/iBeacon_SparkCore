@@ -1,0 +1,53 @@
+<html>
+<body>
+	<span id="beaconuuid"></span><br>
+    <span id="beaconinfo"></span><br>
+    <span id="tstamp"></span>
+
+    <br><br>
+    <button onclick="start()">Connect</button>
+
+    <script type="text/javascript">
+    function start() {
+
+        document.getElementById("beaconinfo").innerHTML = "Waiting for data...";
+        var deviceID = "<deviceid>";
+        var accessToken = "<accesstoken>";
+        var eventSource1 = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+		var eventSource2 = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+
+        eventSource1.addEventListener('open', function(e) {
+            console.log("Opened!"); },false);
+			
+		eventSource2.addEventListener('open', function(e) {
+            console.log("Opened!"); },false);
+
+        eventSource1.addEventListener('error', function(e) {
+            console.log("Errored!"); },false);
+		
+		eventSource2.addEventListener('error', function(e) {
+            console.log("Errored!"); },false);
+
+        eventSource1.addEventListener('bninfo', function(e) {
+            var parsedData = JSON.parse(e.data);
+            var spanBeaconInfo = document.getElementById("beaconinfo");
+
+			spanBeaconInfo.innerHTML = "Beacon Info: " + parsedData.data;
+			spanBeaconInfo.style.fontSize = "28px";
+			
+			var tsSpan   = document.getElementById("tstamp");
+            tsSpan.innerHTML = "At timestamp " + parsedData.published_at;
+            tsSpan.style.fontSize = "9px";
+        }, false);
+		
+		eventSource2.addEventListener('bnuuid', function(e) {
+            var parsedData = JSON.parse(e.data);
+			var spanBeaconUUID = document.getElementById("beaconuuid");
+
+			spanBeaconUUID.innerHTML = "Found Beacon with UUID: " + parsedData.data;
+			spanBeaconUUID.style.fontSize = "28px";
+        }, false);
+    }
+    </script>
+</body>
+</html>
