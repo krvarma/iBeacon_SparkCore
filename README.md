@@ -33,6 +33,15 @@ You can also use the companion Web Application to see the nearby iBeacons. To us
 
 **Screenshots**
 
+![enter image description here][8]
+
+![enter image description here][9]
+
+![enter image description here][10]
+
+![enter image description here][11]
+
+![enter image description here][12]
 
 
   [1]: https://community.spark.io/t/ble-mini-and-spark-core/5377
@@ -42,3 +51,8 @@ You can also use the companion Web Application to see the nearby iBeacons. To us
   [5]: https://developer.apple.com/library/ios/samplecode/AirLocate/Introduction/Intro.html
   [6]: http://stackoverflow.com/questions/20416218/understanding-ibeacon-distancing
   [7]: http://developer.radiusnetworks.com/ibeacon/
+  [8]: https://raw.githubusercontent.com/krvarma/iBeacon_SparkCore/master/screenshots/IMG_0105.PNG
+  [9]: https://raw.githubusercontent.com/krvarma/iBeacon_SparkCore/master/screenshots/IMG_0107.JPG
+  [10]: https://raw.githubusercontent.com/krvarma/iBeacon_SparkCore/master/screenshots/IMG_0108.JPG
+  [11]: https://raw.githubusercontent.com/krvarma/iBeacon_SparkCore/master/screenshots/IMG_3637.JPG
+  [12]: https://raw.githubusercontent.com/krvarma/iBeacon_SparkCore/master/screenshots/web%20page.png
